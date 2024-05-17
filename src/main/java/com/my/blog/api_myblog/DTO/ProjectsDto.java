@@ -1,13 +1,11 @@
 package com.my.blog.api_myblog.DTO;
 
-import com.my.blog.api_myblog.Model.ProjectsEntity;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Value;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import com.my.blog.api_myblog.Model.ProjectsEntity;
+
+import lombok.Data;
 
 /**
  * DTO for {@link com.my.blog.api_myblog.Model.ProjectsEntity}
@@ -20,6 +18,8 @@ public class ProjectsDto implements Serializable {
     private String language;
     private String framework;
     private LocalDateTime createdAt;
+    private String linkProject;
+    private String typeProject;
 
     public static ProjectsDto fromEntity(ProjectsEntity entity) {
         ProjectsDto dto = new ProjectsDto();
@@ -29,6 +29,8 @@ public class ProjectsDto implements Serializable {
         dto.setLanguage(entity.getLanguage());
         dto.setFramework(entity.getFramework());
         dto.setCreatedAt(entity.getCreatedAt());
+        dto.setLinkProject(entity.getLinkProject());
+        dto.setTypeProject(entity.getTypeProject());
         return dto;
     }
 }

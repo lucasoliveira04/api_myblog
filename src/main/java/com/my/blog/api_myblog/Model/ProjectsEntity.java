@@ -1,10 +1,15 @@
 package com.my.blog.api_myblog.Model;
 
-import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Getter @Setter
 @Entity @Table(name = "projects_entity")
@@ -25,6 +30,14 @@ public class ProjectsEntity {
     @Column(name = "framework")
     private String framework;
 
+    @Column(name = "type_project")
+    private String typeProject;
+
+    @Column(name = "link_project")
+    private String linkProject;
+
     @Column(name = "createdAt")
     private LocalDateTime createdAt;
+
+    
 }

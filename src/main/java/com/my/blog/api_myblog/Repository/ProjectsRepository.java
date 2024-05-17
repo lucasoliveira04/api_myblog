@@ -8,4 +8,6 @@ import java.util.List;
 public interface ProjectsRepository extends JpaRepository<ProjectsEntity, Long> {
     List<ProjectsEntity> findByLanguageIgnoreCase(String language);
     List<ProjectsEntity> findByFrameworkIgnoreCase(String framework);
+    List<ProjectsEntity> findByTypeProjectsIgnoreCase(String project);
+    List<ProjectsEntity> findByLinkProjectIgnoreCase(String link);
 }

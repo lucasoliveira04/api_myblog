@@ -1,11 +1,12 @@
 package com.my.blog.api_myblog.Services.AddProjects;
 
+import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Service;
+
 import com.my.blog.api_myblog.DTO.ProjectsDto;
 import com.my.blog.api_myblog.Model.ProjectsEntity;
 import com.my.blog.api_myblog.Repository.ProjectsRepository;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 @Service
 public class AddProjectServices {
@@ -24,6 +25,8 @@ public class AddProjectServices {
             newEntity.setLanguage(dto.getLanguage());
             newEntity.setFramework(dto.getFramework());
             newEntity.setCreatedAt(LocalDateTime.now());
+            newEntity.setLinkProject(dto.getLinkProject());
+            newEntity.setTypeProject(dto.getTypeProject());
             projectsRepository.save(newEntity);
             return "Projeto adicionado com sucesso";
         } catch (Exception e) {

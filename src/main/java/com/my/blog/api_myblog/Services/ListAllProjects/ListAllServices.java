@@ -1,12 +1,13 @@
 package com.my.blog.api_myblog.Services.ListAllProjects;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
 import com.my.blog.api_myblog.DTO.ProjectsDto;
 import com.my.blog.api_myblog.Model.ProjectsEntity;
 import com.my.blog.api_myblog.Repository.ProjectsRepository;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ListAllServices {
@@ -38,6 +39,22 @@ public class ListAllServices {
         return projectsEntities.stream()
                 .map(ProjectsDto::fromEntity)
                 .collect(Collectors.toList());
+    }
+
+    // Listando projetos pelo tipo de projeto
+    public List<ProjectsDto> getProjectTypeProjects(String name) {
+        List<ProjectsEntity> projectsEntities = projectsRepository.findByTypeProjectsIgnoreCase(name);
+        return projectsEntities.stream()
+               .map(ProjectsDto::fromEntity)
+               .collect(Collectors.toList());
+    }
+    
+    // Listando projetos pelo link do projeto
+    public List<ProjectsDto> getLinkProject(String name) {
+        List<ProjectsEntity> projectsEntities = projectsRepository.findByLinkProjectIgnoreCase(name);
+        return projectsEntities.stream()
+               .map(ProjectsDto::fromEntity)
+               .collect(Collectors.toList());
     }
 
 }

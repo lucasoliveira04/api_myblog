@@ -50,6 +50,18 @@ public class ProjectsController {
         return ResponseEntity.ok(projectsDtos);
     }
 
+    @GetMapping("/get/projects/type/{typeName}")
+    public ResponseEntity<List<ProjectsDto>> getProjectsTypeProject(@PathVariable String typeName){
+        List<ProjectsDto> projectsDtos = listAllServices.getProjectTypeProjects(typeName);
+        return ResponseEntity.ok(projectsDtos);
+    }
+
+    @GetMapping("/get/projects/link/{linkName}")
+    public ResponseEntity<List<ProjectsDto>> getProjectsLinkProject(@PathVariable String link){
+        List<ProjectsDto> projectsDtos = listAllServices.getLinkProject(link);
+        return ResponseEntity.ok(projectsDtos);
+    }
+
     @PostMapping("/add/project")
     public ResponseEntity<String> addProject(@RequestBody ProjectsDto project) {
         String result = addProjectServices.addProject(project);
