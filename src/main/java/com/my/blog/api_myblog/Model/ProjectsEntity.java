@@ -36,6 +36,9 @@ public class ProjectsEntity {
     @Column(name = "link_project")
     private String linkProject;
 
+    @Column(name = "img_url")
+    private String imgUrl;
+
     @Column(name = "createdAt")
     private LocalDateTime createdAt;
 

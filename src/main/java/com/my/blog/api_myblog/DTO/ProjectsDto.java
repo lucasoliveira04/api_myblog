@@ -20,6 +20,7 @@ public class ProjectsDto implements Serializable {
     private LocalDateTime createdAt;
     private String linkProject;
     private String typeProject;
+    private String imgUrl;
 
     public static ProjectsDto fromEntity(ProjectsEntity entity) {
         ProjectsDto dto = new ProjectsDto();
@@ -31,6 +32,7 @@ public class ProjectsDto implements Serializable {
         dto.setCreatedAt(entity.getCreatedAt());
         dto.setLinkProject(entity.getLinkProject());
         dto.setTypeProject(entity.getTypeProject());
+        dto.setImgUrl(entity.getImgUrl());
         return dto;
     }
 }

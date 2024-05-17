@@ -27,6 +27,7 @@ public class AddProjectServices {
             newEntity.setCreatedAt(LocalDateTime.now());
             newEntity.setLinkProject(dto.getLinkProject());
             newEntity.setTypeProject(dto.getTypeProject());
+            newEntity.setImgUrl(dto.getImgUrl());
             projectsRepository.save(newEntity);
             return "Projeto adicionado com sucesso";
         } catch (Exception e) {
