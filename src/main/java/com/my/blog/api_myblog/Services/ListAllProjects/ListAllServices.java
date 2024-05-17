@@ -43,12 +43,12 @@ public class ListAllServices {
 
     // Listando projetos pelo tipo de projeto
     public List<ProjectsDto> getProjectTypeProjects(String name) {
-        List<ProjectsEntity> projectsEntities = projectsRepository.findByTypeProjectsIgnoreCase(name);
+        List<ProjectsEntity> projectsEntities = projectsRepository.findByTypeProjectIgnoreCase(name);
         return projectsEntities.stream()
                .map(ProjectsDto::fromEntity)
                .collect(Collectors.toList());
     }
-    
+
     // Listando projetos pelo link do projeto
     public List<ProjectsDto> getLinkProject(String name) {
         List<ProjectsEntity> projectsEntities = projectsRepository.findByLinkProjectIgnoreCase(name);
