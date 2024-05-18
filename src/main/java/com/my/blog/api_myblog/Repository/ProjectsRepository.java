@@ -9,6 +9,6 @@ import com.my.blog.api_myblog.Model.ProjectsEntity;
 public interface ProjectsRepository extends JpaRepository<ProjectsEntity, Long> {
     List<ProjectsEntity> findByLanguageIgnoreCase(String language);
     List<ProjectsEntity> findByFrameworkIgnoreCase(String framework);
-    List<ProjectsEntity> findByTypeProjectIgnoreCase(String project);  // Corrigido aqui
+    List<ProjectsEntity> findByTypeProjectIgnoreCase(String project); 
     List<ProjectsEntity> findByLinkProjectIgnoreCase(String link);
 }

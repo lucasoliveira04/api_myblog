@@ -41,6 +41,4 @@ public class ProjectsEntity {
 
     @Column(name = "createdAt")
     private LocalDateTime createdAt;
-
-    
 }
