@@ -7,17 +7,14 @@ import org.springframework.stereotype.Service;
 import com.my.blog.api_myblog.DTO.ProjectsDto;
 import com.my.blog.api_myblog.Model.ProjectsEntity;
 import com.my.blog.api_myblog.Repository.ProjectsRepository;
-import com.my.blog.api_myblog.Services.email.NotificationEmail;
 
 @Service
 public class AddProjectServices {
 
     private final ProjectsRepository projectsRepository;
-    private final NotificationEmail notificationEmail;
 
-    public AddProjectServices(ProjectsRepository projectsRepository, NotificationEmail notificationEmail) {
+    public AddProjectServices(ProjectsRepository projectsRepository) {
         this.projectsRepository = projectsRepository;
-        this.notificationEmail = notificationEmail;
     }
 
     public String addProject(ProjectsDto dto) {
@@ -32,7 +29,6 @@ public class AddProjectServices {
             newEntity.setTypeProject(dto.getTypeProject());
             newEntity.setImgUrl(dto.getImgUrl());
             projectsRepository.save(newEntity);
-            notificationEmail.sendMail();
             return "Projeto adicionado com sucesso";
         } catch (Exception e) {
             return "Erro ao adicionar projeto: " + e.getMessage();
