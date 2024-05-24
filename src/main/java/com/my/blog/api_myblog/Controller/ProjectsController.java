@@ -62,6 +62,12 @@ public class ProjectsController {
         return ResponseEntity.ok(projectsDtos);
     }
 
+    @GetMapping("/get/projects/link-github/{titleProject}")
+    public ResponseEntity<List<ProjectsDto>> getProjectsTitleProject(@PathVariable String title){
+        List<ProjectsDto> projectsDtos = listAllServices.getNameProject(title);
+        return ResponseEntity.ok(projectsDtos);
+    }
+
     @PostMapping("/add/project")
     public ResponseEntity<String> addProject(@RequestBody ProjectsDto project) {
         String result = addProjectServices.addProject(project);
