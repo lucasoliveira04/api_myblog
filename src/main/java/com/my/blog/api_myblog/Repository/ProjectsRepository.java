@@ -11,4 +11,5 @@ public interface ProjectsRepository extends JpaRepository<ProjectsEntity, Long> 
     List<ProjectsEntity> findByFrameworkIgnoreCase(String framework);
     List<ProjectsEntity> findByTypeProjectIgnoreCase(String project); 
     List<ProjectsEntity> findByLinkProjectIgnoreCase(String link);
+    List<ProjectsEntity> findByTitleIgnoreCase(String name);
 }

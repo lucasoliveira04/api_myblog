@@ -57,4 +57,12 @@ public class ListAllServices {
                .collect(Collectors.toList());
     }
 
+    // Listando projetos pelo titulo
+    public List<ProjectsDto> getNameProject(String name) {
+        List<ProjectsEntity> projectsEntities = projectsRepository.findByTitleIgnoreCase(name);
+        return projectsEntities.stream()
+                .map(ProjectsDto::fromEntity)
+                .collect(Collectors.toList());
+    }
+
 }
