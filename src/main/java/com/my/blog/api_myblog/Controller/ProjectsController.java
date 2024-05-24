@@ -62,7 +62,7 @@ public class ProjectsController {
         return ResponseEntity.ok(projectsDtos);
     }
 
-    @GetMapping("/get/projects/link-github/{titleProject}")
+    @GetMapping("/get/projects/title/{titleProject}")
     public ResponseEntity<List<ProjectsDto>> getProjectsTitleProject(@PathVariable String title){
         List<ProjectsDto> projectsDtos = listAllServices.getNameProject(title);
         return ResponseEntity.ok(projectsDtos);
