@@ -58,7 +58,7 @@ public class NotificationSenEmail {
                "<p>O projeto <strong>" + nomeProject + "</strong> foi adicionado com sucesso ao blog.</p>" +
                "<p><strong>Descrição:</strong> " + description + "</p>" +
                "<p><strong>Data de Criação:</strong> " + createdAt+ "</p>" +
-               "<p>Você pode ver mais detalhes sobre o projeto <a href='https://blog-lucasoliveira.vercel.app'>aqui</a>.</p>" +
+               "<p>Você pode ver mais detalhes sobre o projeto <a href='https://blog-frontend-weld-three.vercel.app/'>aqui</a>.</p>" +
                "</div>" +
                "<div class='footer'>" +
                "<p>&copy; 2024 Blog. Todos os direitos reservados.</p>" +
